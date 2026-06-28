@@ -84,7 +84,7 @@ def render(transcript_path):
                 if isinstance(content, str):
                     body = content.strip()
                     # Skip a bare slash-command / skill invocation (e.g. the
-                    # /hillnote-capture trigger itself); keep prose that merely mentions one.
+                    # /session-capture trigger itself); keep prose that merely mentions one.
                     if re.fullmatch(r"/[\w:.-]+", body):
                         continue
                     speaker("user", "\U0001F464", "User")
@@ -136,7 +136,7 @@ def _selfcheck():
         {"type": "assistant", "message": {"role": "assistant", "content": [
             {"type": "text", "text": "Done."},
         ]}},
-        {"type": "user", "message": {"role": "user", "content": "/hillnote-capture:hillnote-capture"}},
+        {"type": "user", "message": {"role": "user", "content": "/session-capture:session-capture"}},
     ]
     with tempfile.NamedTemporaryFile("w", suffix=".jsonl", delete=False) as f:
         for row in sample:
@@ -153,7 +153,7 @@ def _selfcheck():
     # speaker header collapses consecutive same-speaker turns
     assert md.count("## \U0001F916 Assistant") == 1, "assistant header not collapsed"
     # bare slash-command invocation is stripped from the saved doc
-    assert "/hillnote-capture" not in md, "bare invocation not stripped"
+    assert "/session-capture" not in md, "bare invocation not stripped"
     print("selfcheck OK")
 
 

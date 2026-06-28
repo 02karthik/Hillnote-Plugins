@@ -33,5 +33,5 @@ Capture this entire Claude Code session and save it into a Hillnote workspace th
 5. **Confirm.** Tell the user the document title and which workspace it was saved to.
 
 Notes:
-- The transcript on disk includes everything up to (but not including) this `/hillnote-capture` turn itself — that's expected.
-- The Hillnote tools come from the bundled `hillnote` MCP server (`https://hillnote.com/mcp`). If they aren't available or return an auth error, the user needs to authenticate the server — Claude Code prompts on first use, or they can run `/mcp`. Tell them and stop.
+- The transcript on disk includes everything up to (but not including) this `/session-capture` turn itself — that's expected.
+- The Hillnote tools come from the bundled `notes` MCP server (`https://hillnote.com/mcp`). If they aren't available or return an auth error, the user needs to authenticate the server — Claude Code prompts on first use, or they can run `/mcp`. Tell them and stop.
